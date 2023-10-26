@@ -4,6 +4,7 @@ section .data
   .len:   equ     $ - msg
 
 section .text
+
 start:
   mov rax, 0x2000004 ; write
   mov rdi, 1 ; stdout
