@@ -1,16 +1,15 @@
-global start
 section .data
-  msg:    db      "Hello, world!", 10
-  .len:   equ     $ - msg
+  msg:    db      "Hello, world!", 0
 
+section .bss
 section .text
-
-start:
-  mov rax, 0x2000004 ; write
+  global main
+main:
+  mov rax, 1 ; write
   mov rdi, 1 ; stdout
   mov rsi, msg
-  mov rdx, msg.len
+  mov rdx, 12
   syscall
-  mov rax, 0x2000001 ; exit
+  mov rax, 60 ; exit
   mov rdi, 0
   syscall
