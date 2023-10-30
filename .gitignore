@@ -3,6 +3,7 @@
 *.lo
 *.o
 *.obj
+*.app
 
 
 # Compiled Dynamic libraries

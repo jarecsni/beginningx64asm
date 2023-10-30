@@ -1,4 +1,5 @@
 alive.app: alive.o
-	gcc -o alive.app alive.o -no-pie
+	gcc -ggdb -z execstack -o alive.app alive.o -no-pie
+	#ld --entry main -m elf_x86_64 -o alive.app alive.o
 alive.o: alive.asm
-	nasm -f elf64 -g -F dwarf alive.asm -l alive.lst
+	nasm -felf64 -g alive.asm -l alive.lst
