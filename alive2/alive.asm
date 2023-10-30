@@ -35,18 +35,15 @@ main:
     ; print radius
     mov     rax, 0
     mov     rdi, fmtint
-    mov     rsi, radius
+    mov     rsi, [radius]
     call printf
 
     ; print pi
-    mov     rax, 1                  ; floating point involved (xmm register used)
+    mov     rax, 1                  ; floating point involved (1 xmm register used)
     movq    xmm0, [pi]
     mov     rdi, fmtflt
     call printf
 
     mov     rsp, rbp                ; function epilogue
     pop     rbp 
-    mov     rax, 60
-    mov     rdi, 0
-    syscall
-
+    ret
