@@ -11,8 +11,8 @@ section .bss
 section .text
     global main
 main:
-    push    rbp
-    mov     rbp, rsp; for correct debugging
+    push    rbp                         ; rbp is 'frame pointer'
+    mov     rbp, rsp                    ; saves the previous top of the stack to rbp
     mov     rbx, 0
     mov     rax, 0
 jloop:
